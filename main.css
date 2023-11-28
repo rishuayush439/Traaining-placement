@@ -155,6 +155,7 @@ h1{
     margin-bottom: 100px;
     height: 800px;
     max-height: 1200px;
+    z-index: -100;
     
 }
 .h1a{
