@@ -294,10 +294,196 @@ q{
 
 /* ***********************************footer******************************* */
 
-.attractive-footer {
-    background-color: rgb(255, 115, 0);
-    color: #fff;
-    padding: 10px 0;
+footer{
+    width: 100%;
+    height: 400px;
+    background-color: rgb(210, 118, 33);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p:nth-child(1){
+    font-size:30px;
+    color: rgb(255, 255, 254);
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+footer p:nth-child(2){
+    font-size:17px;
+    color: rgb(244, 243, 242);
+    width: 500px;
+    text-align: center;
+    line-height: 26px;
+}
+
+.social{
+    display: flex;
+}
+.social a{
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(246, 246, 247);
+    border-radius: 50%;
+    margin: 22px 10px;
+    color: rgb(254, 151, 6);
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.social a:hover{
+    transform: scale(1.3);
+    transition: .3s;
+    background: aliceblue;
+    color: rgb(253, 253, 253);
+}
+.last{
+         /*what it is doing*/
+    color: rgb(253, 253, 255);
+    bottom: 35px;
+    font-size: 15px;
+}
+ 
+
+
+
+.popup-container {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #d49557;
+    padding: 20px;
+    font-size: 20px;
+    word-spacing: 7px;
+    font-style: italic;
+    font-weight: bold;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.close-btn {
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 50px;
+    position: absolute;
+    top: 200px;
+    right: 15px;
+}
+
+
+
+
+
+
+
+
+/* contact us page  */
+
+.contact_us_heading{
+    border-bottom: 2px solid black;
+    padding: 0;
+}
+.contact_wrapper{
+    box-sizing: border-box;
+    margin: 2%;
+    color: #772d2d;
+    
+}
+
+.contact_grid_container{
+ display: grid;
+ grid-template-columns: 2.8fr 1.2fr;
+ grid-gap: 1%;
+}
+
+.contact_grid_item{
+    margin: 2%;
+    }
+
+.basic_contact{
+    margin: 2%;
+    font-size:medium;
+    font-family:  'Klee One', cursive;
+
+}
+.heading_contact
+{
+    font-family:  'Klee One', cursive;
+    font: weight 800;
+    padding: 1%;
+    color: #1B2945;
+    font-size: large;
+}
+
+
+
+.contact_input{
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 3px 2.5px 2px 0px gray ;
+    border: 1px solid rgba(128, 128, 128, 0.137);
+    background-color: rgba(255, 255, 255, 0.945);
+    width: 70%;
+    height: 80%;
+    font-family:  'Klee One', cursive;
+    margin: 0.2%;
+
+}
+.contact_textarea{
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 3px 2.5px 2px 0px gray;
+    border: 1px solid rgba(128, 128, 128, 0.137);
+    background-color: rgba(255, 255, 255, 0.945);
+
+    width: 70%;
+    height: 80%;
+    font-family:  'Klee One', cursive;
+
+}
+.send_contact_btn{
+    border: 1px solid gray;
+    border-radius: 8px;
+    width: 20%;
+    height: 30px;
+    background-color:#772d2d;
+    color:white;
+    font-family:  'Klee One', cursive;
+    box-shadow: 2px 2px 4px 0px rgb(169, 204, 250) ;
+    margin: 2%;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.MuiSvgIcon-root{
+    height: 30px;
+}
+@media only screen and (max-width: 600px) {
+    .contact_grid_container{
+        display: grid;
+        grid-template-columns: 1fr;
+        /* grid-gap: 5%; */
+       }
+       .contact_us_input_container{
+           box-sizing: border-box;
+            width: 100%;
+            /* margin-left: 2%; */
+            margin-top: 0;
+            padding:0  10%;
+    }
+    
   }
- 
- 
