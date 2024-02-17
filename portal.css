@@ -12,7 +12,7 @@ body {
 } 
 
 header { 
-	background-color: #c58d16; 
+	background-color: #e49a4c; 
 	color: #fff; 
 	text-align: center; 
 	padding: 1rem 0; 
@@ -22,7 +22,7 @@ nav ul {
 	list-style: none; 
 	display: flex; 
 	justify-content: center; 
-	background-color: #b5d5da; 
+	background-color: #dad9b5; 
 	padding: 0.5rem 0; 
 } 
 
@@ -93,7 +93,7 @@ nav a:hover {
 } 
 
 .job-listings li { 
-	background-color: #fff; 
+	background-color: #c99f84; 
 	border: 1px solid #ccc; 
 	padding: 20px; 
 	margin-bottom: 20px; 
@@ -112,7 +112,7 @@ nav a:hover {
 
 .job-listings a { 
 	background-color: #333; 
-	color: #fff; 
+	color: #ffffff; 
 	text-decoration: none; 
 	padding: 10px 20px; 
 	border-radius: 4px; 
