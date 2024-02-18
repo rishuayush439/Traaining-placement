@@ -5,15 +5,16 @@
 } 
 
 body { 
-	font-family: Arial, sans-serif; 
 	
-	background: linear-gradient(to right,rgb(238, 184, 84),rgb(246, 216, 156));
+	
+	background: linear-gradient(90deg,rgb(222, 120, 19),rgb(246, 216, 156));
 	line-height: 1.6; 
 	color: #333; 
 } 
 
+
 header { 
-	background-color: #e49a4c; 
+	background: linear-gradient(to right,rgb(248, 140, 0),rgb(190, 131, 42));
 	color: #fff; 
 	text-align: center; 
 	padding: 1rem 0; 
@@ -23,7 +24,7 @@ nav ul {
 	list-style: none; 
 	display: flex; 
 	justify-content: center; 
-	background-color: #d29f30; 
+	background: linear-gradient(to right,rgb(238, 138, 7),rgb(246, 216, 156));
 	padding: 0.5rem 0; 
 } 
 
@@ -61,7 +62,7 @@ nav a:hover {
 } 
 
 .job-listings li { 
-	background-color: #c99f84; 
+	background-color: rgb(243, 215, 163); 
 	border: 1px solid #ccc; 
 	padding: 20px; 
 	margin-bottom: 20px; 
@@ -69,12 +70,13 @@ nav a:hover {
 } 
 
 .job-listings h3 { 
-	font-size: 20px; 
+	font-size: 30px; 
 	margin-bottom: 10px; 
 } 
 
 .job-listings p { 
-	font-size: 14px; 
+	font-size: 20px; 
+	font-style: italic;
 	margin-bottom: 10px; 
 } 
 
@@ -91,6 +93,8 @@ nav a:hover {
 .job-listings a:hover { 
 	background-color: #ff6600; 
 } 
+
+
 
 footer { 
 	text-align: center; 
