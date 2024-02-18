@@ -67,7 +67,44 @@
 
 
     </form>
-
+    <script>
+        document.querySelector('button[type="submit"]').addEventListener('click', function (event) {
+            // Prevent the form from submitting and page reload
+            event.preventDefault();
+    
+            // Get the values from the form fields
+            var rollNumber = document.getElementsByName('username')[0].value;
+            var password = document.getElementsByName('pswrd')[0].value;
+    
+            // Your validation logic here
+            if (validateCredentials(rollNumber, password)) {
+                // Redirect to the specified URL if validation is successful
+                window.location.href = 'https://top-courses-swart.vercel.app/';
+            } else {
+                // Display an error message or handle invalid credentials
+                alert('Invalid Roll Number or password. Please try again.');
+            }
+        });
+    
+        // Function to validate Roll Number and password
+        function validateCredentials(rollNumber, password) {
+            // Hardcoded values for demonstration purposes
+            var validCredentials = [
+                { rollNumber: '2208410100021', password: 'Ayush@123' },
+                { rollNumber: '2208410100034', password: 'Mahendra@123' }
+            ];
+    
+            // Check if entered credentials match any of the valid combinations
+            for (var i = 0; i < validCredentials.length; i++) {
+                if (rollNumber === validCredentials[i].rollNumber && password === validCredentials[i].password) {
+                    return true;
+                }
+            }
+    
+            return false;
+        }
+    </script>
+    
 
 
 

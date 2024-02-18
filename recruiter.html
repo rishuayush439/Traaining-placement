@@ -78,13 +78,79 @@
 
         </div>
     </div>
-  <script>
+  <!-- <script>
          
      document.getElementById('logn').addEventListener('click',function(){
         window.location.href = 'portal.html';
      });
     
-  </script>
+  </script> -->
+
+  <!-- <script>
+    document.getElementById('logn').addEventListener('click', function (event) {
+        // Prevent the form from submitting and page reload
+        event.preventDefault();
+
+        // Get the values from the form fields
+        var email = document.getElementsByName('Email')[0].value;
+        var password = document.getElementsByName('pswrd')[0].value;
+
+        // Your validation logic here (replace with your own validation rules)
+        if (validateCredentials(email, password)) {
+            // Redirect to portal.html if validation is successful
+            window.location.href = 'portal.html';
+        } else {
+            // Display an error message or handle invalid credentials
+            alert('Invalid username or password. Please try again.');
+        }
+    });
+
+    // Function to validate username and password
+    function validateCredentials(email, password) {
+        // Add your own validation logic here
+        // For simplicity, this example checks if both fields are not empty
+        return email.trim() !== '' && password.trim() !== '';
+    }
+</script> -->
+<script>
+    document.getElementById('logn').addEventListener('click', function (event) {
+        // Prevent the form from submitting and page reload
+        event.preventDefault();
+
+        // Get the values from the form fields
+        var email = document.getElementsByName('Email')[0].value;
+        var password = document.getElementsByName('pswrd')[0].value;
+
+        // Your validation logic here (replace with your own validation rules)
+        if (validateCredentials(email, password)) {
+            // Redirect to portal.html if validation is successful
+            window.location.href = 'portal.html';
+        } else {
+            // Display an error message or handle invalid credentials
+            alert('Invalid email or password. Please try again.');
+        }
+    });
+
+    // Function to validate email and password
+    function validateCredentials(email, password) {
+        // Hardcoded values for demonstration purposes
+        var validCredentials = [
+            { email: 'rishuayush439@gmail.com', password: 'Ayush@123' },
+            { email: 'dwivedimahendra9999@gmail.com', password: 'Mahendra@123' }
+        ];
+
+        // Check if entered credentials match any of the valid combinations
+        for (var i = 0; i < validCredentials.length; i++) {
+            if (email === validCredentials[i].email && password === validCredentials[i].password) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+</script>
+
+
     
 </body>
 </html>

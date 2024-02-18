@@ -68,7 +68,49 @@
 
 
     </form>
-
+    <script>
+        document.querySelector('button[type="submit"]').addEventListener('click', function (event) {
+            // Prevent the form from submitting and page reload
+            event.preventDefault();
+    
+            // Get the values from the form fields
+            var rollNumber = document.getElementsByName('username')[0].value;
+            var verifierPassword = document.getElementsByName('pswrd')[0].value;
+            var personalPassword = document.getElementsByName('pswrd')[1].value;
+    
+            // Your validation logic here
+            if (validateCredentials(rollNumber, verifierPassword, personalPassword)) {
+                // Redirect to .\Student Portal\index.html if validation is successful
+                window.location.href = '.\\Student Portal\\index.html';
+            } else {
+                // Display an error message or handle invalid credentials
+                alert('Invalid Roll Number, verifier password, or personal password. Please try again.');
+            }
+        });
+    
+        // Function to validate Roll Number, verifier password, and personal password
+        function validateCredentials(rollNumber, verifierPassword, personalPassword) {
+            // Hardcoded values for demonstration purposes
+            var validCredentials = [
+                { rollNumber: '2208410100021', verifierPassword: 'Ayush@123', personalPassword: 'Ayush@123' },
+                { rollNumber: '2208410100034', verifierPassword: 'Mahendra@123', personalPassword: 'Mahendra@123' }
+            ];
+    
+            // Check if entered credentials match any of the valid combinations
+            for (var i = 0; i < validCredentials.length; i++) {
+                if (
+                    rollNumber === validCredentials[i].rollNumber &&
+                    verifierPassword === validCredentials[i].verifierPassword &&
+                    personalPassword === validCredentials[i].personalPassword
+                ) {
+                    return true;
+                }
+            }
+    
+            return false;
+        }
+    </script>
+    
 
 
 
