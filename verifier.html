@@ -79,10 +79,10 @@
             var verifierPassword = document.getElementsByName('pswrd')[0].value;
             var personalPassword = document.getElementsByName('pswrd')[1].value;
     
-            // Your validation logic here
+            //  validation logic here
             if (validateCredentials(rollNumber, verifierPassword, personalPassword)) {
                 // Redirect to .\Student Portal\index.html if validation is successful
-                window.location.href = '#';
+                window.location.href = '.\\Student Portal\\index.html';
             } else {
                 // Display an error message or handle invalid credentials
                 alert('Invalid Roll Number, verifier password, or personal password. Please try again.');
