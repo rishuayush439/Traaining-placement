@@ -11,14 +11,13 @@
         <div class="log">
             <h3 class="side">REC Sonbhadra</h3>
             
-            
             <h1 class="side">One stop portal for students and companies for placement.</h1>
             
             <img src="logo.png" width="250px" height="250px">
             <br>
             <u><h2 class="p1">Instructions</h2></u>
             
-            <p class="p1">Login Using Your Institute Roll Number.</p>
+            <p class="p1">Login Using Your Institute Roll Number and secret Verifier Access Password.</p>
         </div>
     
         <div class="loginmain">
@@ -30,21 +29,24 @@
          <!-- Headings for the form -->
         <div class="headingsContainer">
             
-            <p>Login in with your Roll Number and password</p>
+            <p>Authenticate For Verifier Access</p>
         </div>
 
         <!-- Main container for all inputs -->
         <div class="mainContainer">
             <!-- Username -->
-           <label for="username">Roll Number </label>
+           <label for="username">Roll number</label>
             <!-- Make sure to put "required" for both the input fields -->
             <input type="text" placeholder="Enter Roll Number" name="username" required>
 
             <br><br>
 
             <!-- Password -->
-            <label for="pswrd">Your password</label>
-            <input type="password" placeholder="Enter Password" name="pswrd" required>
+            <label for="pswrd">Verifier password</label>
+            <input type="password" placeholder="Verifier Password" name="pswrd" required>
+
+            <label for="pswrd">Personal password</label>
+            <input type="password" placeholder="Enter Personal Password" name="pswrd" required>
 
             <!-- sub container for the checkbox and forgot password link -->
             <div class="subcontainer">
@@ -55,10 +57,10 @@
             </div>
 
             <!-- Submit button -->
-             <button type="submit"><a href=".\Student Portal\index.html">Login</a></button>
+             <button type="submit"><a href="#">Login</a></button>
 
             <!-- Sign up link -->
-            <p class="register">Not a member?  <a href="#">Register here!</a></p>
+            <p class="register">Don't have an account?  <a href="#">Register here!</a></p>
         </div>
 
         </div>
@@ -66,74 +68,42 @@
 
 
     </form>
-    <!-- <script>
+    
+     <script >
         document.querySelector('button[type="submit"]').addEventListener('click', function (event) {
             // Prevent the form from submitting and page reload
             event.preventDefault();
     
             // Get the values from the form fields
             var rollNumber = document.getElementsByName('username')[0].value;
-            var password = document.getElementsByName('pswrd')[0].value;
+            var verifierPassword = document.getElementsByName('pswrd')[0].value;
+            var personalPassword = document.getElementsByName('pswrd')[1].value;
     
-            // Your validation logic here (replace with your own validation rules)
-            if (validateCredentials(rollNumber, password)) {
+            // Your validation logic here
+            if (validateCredentials(rollNumber, verifierPassword, personalPassword)) {
                 // Redirect to .\Student Portal\index.html if validation is successful
-                window.location.href = '.\\Student Portal\\index.html';
+                window.location.href = '#';
             } else {
                 // Display an error message or handle invalid credentials
-                alert('Invalid Roll Number or password. Please try again.');
+                alert('Invalid Roll Number, verifier password, or personal password. Please try again.');
             }
         });
     
-        // Function to validate Roll Number and password
-        function validateCredentials(rollNumber, password) {
+        // Function to validate Roll Number, verifier password, and personal password
+        function validateCredentials(rollNumber, verifierPassword, personalPassword) {
             // Hardcoded values for demonstration purposes
             var validCredentials = [
-                { rollNumber: '2208410100021', password: 'Ayush@123' },
-                { rollNumber: '2208410100034', password: 'Mahendra@123' }
+                { rollNumber: '2208410100021', verifierPassword: 'Ayush@123', personalPassword: 'Ayush@123' },
+                { rollNumber: '2208410100034', verifierPassword: 'Mahendra@123', personalPassword: 'Mahendra@123' }
             ];
     
             // Check if entered credentials match any of the valid combinations
             for (var i = 0; i < validCredentials.length; i++) {
-                if (rollNumber === validCredentials[i].rollNumber && password === validCredentials[i].password) {
-                    return true;
-                }
-            }
-    
-            return false;
-        }
-    </script>
-     -->
-     <script>
-        document.querySelector('button[type="submit"]').addEventListener('click', function (event) {
-            // Prevent the form from submitting and page reload
-            event.preventDefault();
-    
-            // Get the values from the form fields
-            var rollNumber = document.getElementsByName('username')[0].value;
-            var password = document.getElementsByName('pswrd')[0].value;
-    
-            // Your validation logic here (replace with your own validation rules)
-            if (validateCredentials(rollNumber, password)) {
-                // Redirect to .\Student Portal\index.html if validation is successful
-                window.location.href = '.\\Student Portal\\index.html';
-            } else {
-                // Display an error message or handle invalid credentials
-                alert('Invalid Roll Number or password. Please try again.');
-            }
-        });
-    
-        // Function to validate Roll Number and password
-        function validateCredentials(rollNumber, password) {
-            // Hardcoded values for demonstration purposes
-            var validCredentials = [
-                { rollNumber: '2208410100021', password: 'Ayush@123' },
-                { rollNumber: '2208410100034', password: 'Mahendra@123' }
-            ];
-    
-            // Check if entered credentials match any of the valid combinations
-            for (var i = 0; i < validCredentials.length; i++) {
-                if (rollNumber === validCredentials[i].rollNumber && password === validCredentials[i].password) {
+                if (
+                    rollNumber === validCredentials[i].rollNumber &&
+                    verifierPassword === validCredentials[i].verifierPassword &&
+                    personalPassword === validCredentials[i].personalPassword
+                ) {
                     return true;
                 }
             }
@@ -145,26 +115,14 @@
         document.querySelector('.forgotpsd a').addEventListener('click', function (event) {
             event.preventDefault();
     
-            // Prompt to get user input for password recovery
-            var recoveryRollNumber = prompt('Enter your Roll Number to initiate password recovery:');
-    
-            // Check if the entered Roll Number is valid
-            var validRollNumber = false;
-            for (var i = 0; i < validCredentials.length; i++) {
-                if (recoveryRollNumber === validCredentials[i].rollNumber) {
-                    validRollNumber = true;
-                    break;
-                }
-            }
-    
-            if (validRollNumber) {
+            // Simulate password recovery logic (use backend logic and email in a real application)
+            var rollNumber = prompt('Enter your Roll Number to initiate password recovery:');
+            if (rollNumber) {
                 var newPassword = generateRandomPassword();
                 alert('A new password has been sent to your registered email address.');
                 // In a real application, you would send the new password to the user's email.
                 // For this example, we'll just update the stored password.
-                updateStoredPassword(recoveryRollNumber, newPassword);
-            } else {
-                alert('Invalid Roll Number. Password recovery failed.');
+                updateStoredPassword(rollNumber, newPassword);
             }
         });
     
@@ -186,12 +144,25 @@
     
             // Prompt to get user input for registration
             var newRollNumber = prompt('Enter your new Roll Number:');
-            var newPassword = prompt('Enter your new Password:');
+            var newVerifierPassword = prompt('Enter your new Verifier Password:');
+            var newPersonalPassword = prompt('Enter your new Personal Password:');
     
-            // Add the new registration entry
-            validCredentials.push({ rollNumber: newRollNumber, password: newPassword });
+            // Validate the inputs (you can add more validation logic)
+            if (newRollNumber && newVerifierPassword && newPersonalPassword) {
+                // Create a new entry for registration
+                var newEntry = {
+                    rollNumber: newRollNumber,
+                    verifierPassword: newVerifierPassword,
+                    personalPassword: newPersonalPassword
+                };
     
-            alert('Registration successful. You can now log in with your new credentials.');
+                // Add the new entry to the valid credentials 
+                validCredentials.push(newEntry);
+    
+                alert('Registration successful! You can now use your new credentials to log in.');
+            } else {
+                alert('Registration canceled. Please fill in all the required fields.');
+            }
         });
     </script>
     
