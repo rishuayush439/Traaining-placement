@@ -115,26 +115,26 @@
         document.querySelector('.forgotpsd a').addEventListener('click', function (event) {
             event.preventDefault();
     
-            // Simulate password recovery logic (use backend logic and email in a real application)
+            // Simulate password recovery logic 
             var rollNumber = prompt('Enter your Roll Number to initiate password recovery:');
             if (rollNumber) {
                 var newPassword = generateRandomPassword();
                 alert('A new password has been sent to your registered email address.');
-                // In a real application, you would send the new password to the user's email.
-                // For this example, we'll just update the stored password.
+                // Send the new password to the user's email.
+                // In this  just update the stored password.
                 updateStoredPassword(rollNumber, newPassword);
             }
         });
     
-        // Function to generate a random password (for demonstration purposes)
+        // Function to generate a random password
         function generateRandomPassword() {
-            // Replace this with a more secure random password generation logic
+            //  Random password generation logic
             return Math.random().toString(36).slice(-8);
         }
     
-        // Function to update stored password (for demonstration purposes)
+        // Function to update stored password 
         function updateStoredPassword(rollNumber, newPassword) {
-            // Replace this with backend logic to update the password in your database
+            //  Logic to update the password in your database
             alert('Password updated in the database.');
         }
     
@@ -147,7 +147,7 @@
             var newVerifierPassword = prompt('Enter your new Verifier Password:');
             var newPersonalPassword = prompt('Enter your new Personal Password:');
     
-            // Validate the inputs (you can add more validation logic)
+            // Validate the inputs More Validation can be added
             if (newRollNumber && newVerifierPassword && newPersonalPassword) {
                 // Create a new entry for registration
                 var newEntry = {

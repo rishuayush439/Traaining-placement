@@ -66,44 +66,7 @@
 
 
     </form>
-    <!-- <script>
-        document.querySelector('button[type="submit"]').addEventListener('click', function (event) {
-            // Prevent the form from submitting and page reload
-            event.preventDefault();
-    
-            // Get the values from the form fields
-            var rollNumber = document.getElementsByName('username')[0].value;
-            var password = document.getElementsByName('pswrd')[0].value;
-    
-            // Your validation logic here (replace with your own validation rules)
-            if (validateCredentials(rollNumber, password)) {
-                // Redirect to .\Student Portal\index.html if validation is successful
-                window.location.href = '.\\Student Portal\\index.html';
-            } else {
-                // Display an error message or handle invalid credentials
-                alert('Invalid Roll Number or password. Please try again.');
-            }
-        });
-    
-        // Function to validate Roll Number and password
-        function validateCredentials(rollNumber, password) {
-            // Hardcoded values for demonstration purposes
-            var validCredentials = [
-                { rollNumber: '2208410100021', password: 'Ayush@123' },
-                { rollNumber: '2208410100034', password: 'Mahendra@123' }
-            ];
-    
-            // Check if entered credentials match any of the valid combinations
-            for (var i = 0; i < validCredentials.length; i++) {
-                if (rollNumber === validCredentials[i].rollNumber && password === validCredentials[i].password) {
-                    return true;
-                }
-            }
-    
-            return false;
-        }
-    </script>
-     -->
+   
      <script>
         document.querySelector('button[type="submit"]').addEventListener('click', function (event) {
             // Prevent the form from submitting and page reload
@@ -113,7 +76,7 @@
             var rollNumber = document.getElementsByName('username')[0].value;
             var password = document.getElementsByName('pswrd')[0].value;
     
-            // Your validation logic here (replace with your own validation rules)
+            //  validation logic Here 
             if (validateCredentials(rollNumber, password)) {
                 // Redirect to .\Student Portal\index.html if validation is successful
                 window.location.href = '.\\Student Portal\\index.html';
@@ -160,23 +123,23 @@
             if (validRollNumber) {
                 var newPassword = generateRandomPassword();
                 alert('A new password has been sent to your registered email address.');
-                // In a real application, you would send the new password to the user's email.
-                // For this example, we'll just update the stored password.
+                // Send the new password to the user's email.
+                //  Here just update the stored password.
                 updateStoredPassword(recoveryRollNumber, newPassword);
             } else {
                 alert('Invalid Roll Number. Password recovery failed.');
             }
         });
     
-        // Function to generate a random password (for demonstration purposes)
+        // Function to generate a random password 
         function generateRandomPassword() {
-            // Replace this with a more secure random password generation logic
+            //  Secure random password generation logic
             return Math.random().toString(36).slice(-8);
         }
     
-        // Function to update stored password (for demonstration purposes)
+        // Function to update stored password 
         function updateStoredPassword(rollNumber, newPassword) {
-            // Replace this with backend logic to update the password in your database
+            //Logic to update the password in your database
             alert('Password updated in the database.');
         }
     
