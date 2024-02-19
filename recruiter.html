@@ -78,40 +78,7 @@
 
         </div>
     </div>
-  <!-- <script>
-         
-     document.getElementById('logn').addEventListener('click',function(){
-        window.location.href = 'portal.html';
-     });
-    
-  </script> -->
-
-  <!-- <script>
-    document.getElementById('logn').addEventListener('click', function (event) {
-        // Prevent the form from submitting and page reload
-        event.preventDefault();
-
-        // Get the values from the form fields
-        var email = document.getElementsByName('Email')[0].value;
-        var password = document.getElementsByName('pswrd')[0].value;
-
-        // Your validation logic here (replace with your own validation rules)
-        if (validateCredentials(email, password)) {
-            // Redirect to portal.html if validation is successful
-            window.location.href = 'portal.html';
-        } else {
-            // Display an error message or handle invalid credentials
-            alert('Invalid username or password. Please try again.');
-        }
-    });
-
-    // Function to validate username and password
-    function validateCredentials(email, password) {
-        // Add your own validation logic here
-        // For simplicity, this example checks if both fields are not empty
-        return email.trim() !== '' && password.trim() !== '';
-    }
-</script> -->
+  
 <script>
     document.getElementById('logn').addEventListener('click', function (event) {
         // Prevent the form from submitting and page reload
@@ -148,6 +115,59 @@
 
         return false;
     }
+
+    // Function to handle "Forgot Password" link
+    document.querySelector('.forgotpsd a').addEventListener('click', function (event) {
+        event.preventDefault();
+
+        // Simulate password recovery logic (use backend logic and email in a real application)
+        var recoveryEmail = prompt('Enter your email to initiate password recovery:');
+
+        // Check if the entered email is valid
+        var validEmail = false;
+        for (var i = 0; i < validCredentials.length; i++) {
+            if (recoveryEmail === validCredentials[i].email) {
+                validEmail = true;
+                break;
+            }
+        }
+
+        if (validEmail) {
+            var newPassword = generateRandomPassword();
+            alert('A new password has been sent to your registered email address.');
+            // In a real application, you would send the new password to the user's email.
+            // For this example, we'll just update the stored password.
+            updateStoredPassword(recoveryEmail, newPassword);
+        } else {
+            alert('Invalid email. Password recovery failed.');
+        }
+    });
+
+    // Function to generate a random password (for demonstration purposes)
+    function generateRandomPassword() {
+        // Replace this with a more secure random password generation logic
+        return Math.random().toString(36).slice(-8);
+    }
+
+    // Function to update stored password (for demonstration purposes)
+    function updateStoredPassword(email, newPassword) {
+        // Replace this with backend logic to update the password in your database
+        alert('Password updated in the database.');
+    }
+
+    // Function to handle "Register Here" link
+    document.querySelector('.register a').addEventListener('click', function (event) {
+        event.preventDefault();
+
+        // Prompt to get user input for registration
+        var newEmail = prompt('Enter your new email:');
+        var newPassword = prompt('Enter your new password:');
+
+        // Add the new registration entry
+        validCredentials.push({ email: newEmail, password: newPassword });
+
+        alert('Registration successful. You can now log in with your new credentials.');
+    });
 </script>
 
 
