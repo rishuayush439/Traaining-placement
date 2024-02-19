@@ -82,7 +82,7 @@
             // Your validation logic here
             if (validateCredentials(rollNumber, verifierPassword, personalPassword)) {
                 // Redirect to .\Student Portal\index.html if validation is successful
-                window.location.href = '.\\Student Portal\\index.html';
+                window.location.href = '#';
             } else {
                 // Display an error message or handle invalid credentials
                 alert('Invalid Roll Number, verifier password, or personal password. Please try again.');
@@ -156,7 +156,7 @@
                     personalPassword: newPersonalPassword
                 };
     
-                // Add the new entry to the valid credentials array
+                // Add the new entry to the valid credentials 
                 validCredentials.push(newEntry);
     
                 alert('Registration successful! You can now use your new credentials to log in.');
